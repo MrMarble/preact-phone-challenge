@@ -9,7 +9,9 @@
     "start": "preact watch",
     "lint": "eslint src",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -18,8 +20,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/preact": "^6.3.7",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.16.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
     "eslint": "^6.0.1",
@@ -28,8 +38,10 @@
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
     "lint-staged": "^11.1.2",
+    "postcss": "^8.3.6",
     "preact-cli": "^3.0.0",
-    "sirv-cli": "1.0.3"
+    "sirv-cli": "1.0.3",
+    "tailwindcss": "^2.2.7"
   },
   "dependencies": {
     "preact": "^10.3.2",
