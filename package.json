@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
+    "build": "preact build --no-prerender",
     "serve": "sirv build --port 8080 --cors --single",
     "start": "preact watch",
     "lint": "eslint src",
     "test": "jest",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src -p 6006",
     "build-storybook": "build-storybook"
   },
   "eslintConfig": {
@@ -27,6 +27,7 @@
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
     "@storybook/preact": "^6.3.7",
+    "@types/jest": "^26.0.24",
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.1",
