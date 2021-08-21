@@ -5,7 +5,7 @@ import Search from "../../components/Search";
 
 const Home = ({ handleSearch, items, loading }) => (
   <main class="pt-5 container mx-auto">
-    <div class="flex flex-row-reverse mb-5">
+    <div class="flex flex-row-reverse mb-5 mr-6 sm:mr-0">
       <Search onInput={handleSearch} />
     </div>
     {loading ? (
