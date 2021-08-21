@@ -5,7 +5,7 @@ export const Item = ({ imgSrc, model, brand, price }) => (
     <img
       src={imgSrc}
       async
-      class="max-h-[170px] sm:max-w-[140px] sm:max-h-full"
+      class="max-h-[170px] sm:max-w-[140px] sm:max-h-full min-h-[100px]"
     />
     <div class="pl-2 sm:p-0">
       <h2 class="text-base text-left">{model}</h2>
