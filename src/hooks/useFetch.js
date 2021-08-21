@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useCallback, useState } from "preact/hooks";
 import { API_URL } from "../constants";
 import { loadCache, setCache } from "../helpers/cache";
 
@@ -6,10 +6,11 @@ export const useFetch = (endpoint) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const cached = loadCache(endpoint);
     if (cached !== false) {
       setData(cached);
+      setLoading(false);
       return;
     }
 
@@ -19,7 +20,7 @@ export const useFetch = (endpoint) => {
     setCache(endpoint, data);
     setData(data);
     setLoading(false);
-  };
+  }, [endpoint]);
 
   return { loading, data, fetchData };
 };
