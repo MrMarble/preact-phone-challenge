@@ -1,4 +1,5 @@
 import { h } from "preact";
+import { Link } from "preact-router";
 import LazyLoad from "react-lazyload";
 import Item from "../../components/Item";
 import Search from "../../components/Search";
@@ -19,12 +20,14 @@ const Home = ({ handleSearch, items, loading }) => (
       <section class="mt-1 grid md:grid-cols-4 sm:grid-cols-3 items-center gap-x-5 gap-y-10">
         {items.map((phone) => (
           <LazyLoad key={phone.id} height={185} offset={500} once>
-            <Item
-              brand={phone.brand}
-              model={phone.model}
-              imgSrc={phone.imgUrl}
-              price={phone.price}
-            />
+            <Link href={`/${phone.id}`}>
+              <Item
+                brand={phone.brand}
+                model={phone.model}
+                imgSrc={phone.imgUrl}
+                price={phone.price}
+              />
+            </Link>
           </LazyLoad>
         ))}
       </section>

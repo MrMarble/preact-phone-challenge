@@ -5,14 +5,19 @@ import { Header } from "./Header";
 
 // Code-splitting is automated for `routes` directory
 import Home from "../routes/home";
+import Details from "../routes/details";
+import { Provider } from "./provider";
 
 const App = () => {
   return (
     <div id="app">
-      <Header />
-      <Router>
-        <Home path="/" />
-      </Router>
+      <Provider>
+        <Header />
+        <Router>
+          <Home path="/" />
+          <Details path="/:id" />
+        </Router>
+      </Provider>
     </div>
   );
 };
