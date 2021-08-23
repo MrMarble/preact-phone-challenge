@@ -1,15 +1,15 @@
 import { useEffect, useState } from "preact/hooks";
-import useFetch from "../../hooks/useFetch";
+import { useProvider } from "../../components/provider";
 import Home from "./Home";
 
 export const HomeContainer = () => {
-  const { loading, fetchData, data } = useFetch("/api/product");
-  const [filtered, setFiltered] = useState(data);
+  const { loading, phones } = useProvider();
+  const [filtered, setFiltered] = useState(phones);
 
   const handleSearch = (search) => {
     console.log("Searching for", search);
     setFiltered(
-      data.filter(
+      phones.filter(
         (item) =>
           item.brand.toUpperCase().includes(search.toUpperCase()) ||
           item.model.toUpperCase().includes(search.toUpperCase())
@@ -18,13 +18,8 @@ export const HomeContainer = () => {
   };
 
   useEffect(() => {
-    setFiltered(data);
-  }, [data]);
-
-  useEffect(() => {
-    console.log("Fetch Data");
-    fetchData();
-  }, [fetchData]);
+    setFiltered(phones);
+  }, [phones]);
 
   return (
     <Home handleSearch={handleSearch} items={filtered} loading={loading} />
