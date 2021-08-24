@@ -10,7 +10,7 @@ import { Provider } from "./provider";
 
 const App = () => {
   return (
-    <div id="app">
+    <div id="app" class="h-screen">
       <Provider>
         <Header />
         <Router>
