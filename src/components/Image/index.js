@@ -1,3 +1,10 @@
-export const Image = ({ src }) => (
-  <img src={src} class="w-full max-w-sm mx-auto" />
+import style from "./style.css";
+export const Image = ({ src, ...props }) => (
+  <img
+    {...props}
+    src={src}
+    class={`${style.loading} ${props.class}`}
+    width="150"
+    height="150"
+  />
 );
