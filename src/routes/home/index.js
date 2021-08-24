@@ -7,7 +7,6 @@ export const HomeContainer = () => {
   const [filtered, setFiltered] = useState(phones);
 
   const handleSearch = (search) => {
-    console.log("Searching for", search);
     setFiltered(
       phones.filter(
         (item) =>
