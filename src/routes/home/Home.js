@@ -2,6 +2,7 @@ import { h } from "preact";
 import { Link } from "preact-router";
 import LazyLoad from "react-lazyload";
 import Item from "../../components/Item";
+import Loader from "../../components/Loader";
 import Search from "../../components/Search";
 
 const Home = ({ handleSearch, items, loading }) => (
@@ -10,12 +11,7 @@ const Home = ({ handleSearch, items, loading }) => (
       <Search onInput={handleSearch} />
     </div>
     {loading ? (
-      <section class="">
-        <img
-          src="/assets/svg/grid.svg"
-          class="mx-auto absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-        />
-      </section>
+      <Loader />
     ) : (
       <section class="mt-1 grid md:grid-cols-4 sm:grid-cols-3 items-center gap-x-5 gap-y-10">
         {items.map((phone) => (
