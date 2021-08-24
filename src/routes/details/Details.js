@@ -1,8 +1,9 @@
+import { Actions } from "../../components/Actions";
 import Description from "../../components/Description";
 import { Image } from "../../components/Image";
 import Loader from "../../components/Loader";
 
-export const Details = ({ phone, loading }) => (
+export const Details = ({ phone, loading, callback }) => (
   <main class="pt-5 container m-auto">
     {loading ? (
       <Loader />
@@ -13,6 +14,11 @@ export const Details = ({ phone, loading }) => (
         </section>
         <section class="w-4/5 mx-auto sm:mx-0 sm:w-auto">
           <Description phone={phone} />
+          <Actions
+            colors={phone?.options?.colors}
+            memory={phone?.options?.storages}
+            callback={callback}
+          />
         </section>
       </article>
     )}
